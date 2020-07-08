@@ -4278,6 +4278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChekPointOff
       objectReference: {fileID: 0}
+    - target: {fileID: 1320053016842518271, guid: bce2974626ab01c4a8493a662812e3ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1320053017409431836, guid: bce2974626ab01c4a8493a662812e3ec,
         type: 3}
       propertyPath: m_Enabled
