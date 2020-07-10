@@ -11,8 +11,7 @@ public class CameraFollow : MonoBehaviour
     private Vector2 velocity;
    
     void Start()
-    {
-        
+    { 
     }
     void FixedUpdate()
     {
