@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//comentario de juan
+
+
+
 public class CheckGround : MonoBehaviour
 {
     public static bool isGrounded;
