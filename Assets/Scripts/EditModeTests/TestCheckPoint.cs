@@ -6,11 +6,11 @@ using UnityEngine.TestTools;
 
 namespace Tests
 {
-    public class TestPasslevel
+    public class TestCheckPoint
     {
         // A Test behaves as an ordinary method
         [Test]
-        public void TestPasslevelSimplePasses()
+        public void TestCheckPointSimplePasses()
         {
             // Use the Assert class to test conditions
         }
@@ -18,7 +18,7 @@ namespace Tests
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
-        public IEnumerator TestPasslevelWithEnumeratorPasses()
+        public IEnumerator TestCheckPointWithEnumeratorPasses()
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.

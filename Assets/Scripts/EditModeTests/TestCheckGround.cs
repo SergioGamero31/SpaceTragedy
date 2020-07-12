@@ -6,20 +6,19 @@ using UnityEngine.TestTools;
 
 namespace Tests
 {
-    public class TestCaminar
+    public class TestCheckGround
     {
         // A Test behaves as an ordinary method
         [Test]
-        public void TestCaminarSimplePasses()
+        public void TestCheckGroundSimplePasses()
         {
             // Use the Assert class to test conditions
-            Assert.Equals(true, false);
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
-        public IEnumerator TestCaminarWithEnumeratorPasses()
+        public IEnumerator TestCheckGroundWithEnumeratorPasses()
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
