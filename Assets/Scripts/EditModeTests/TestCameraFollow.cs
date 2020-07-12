@@ -6,11 +6,11 @@ using UnityEngine.TestTools;
 
 namespace Tests
 {
-    public class Testc
+    public class TestCameraFollow
     {
         // A Test behaves as an ordinary method
         [Test]
-        public void TestcSimplePasses()
+        public void TestCameraFollowSimplePasses()
         {
             // Use the Assert class to test conditions
         }
@@ -18,7 +18,7 @@ namespace Tests
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
-        public IEnumerator TestcWithEnumeratorPasses()
+        public IEnumerator TestCameraFollowWithEnumeratorPasses()
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.

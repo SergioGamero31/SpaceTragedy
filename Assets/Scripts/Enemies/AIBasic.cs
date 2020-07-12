@@ -15,14 +15,12 @@ public class AIBasic : MonoBehaviour
 
     private int i = 0;
     private Vector2 actualPos;
-
-
+    
     void Start()
     {
         waitTime = starWaitTime;
     }
 
-    
     void Update()
     {
         StartCoroutine(CheckEnemyMoving());
