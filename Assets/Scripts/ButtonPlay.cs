@@ -18,6 +18,6 @@ public class ButtonPlay : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("Scene1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
 }
