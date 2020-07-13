@@ -8,11 +8,14 @@ namespace Tests
 {
     public class TestCollected
     {
+        private Collected boladeenergia;
         // A Test behaves as an ordinary method
         [Test]
         public void TestCollectedSimplePasses()
         {
             // Use the Assert class to test conditions
+            bool collected = true;
+            Assert.AreEqual(true, collected);
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use

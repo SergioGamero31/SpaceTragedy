@@ -6,21 +6,23 @@ using UnityEngine.TestTools;
 
 namespace Tests
 {
-    public class TestCheckPoint
+    public class NewTestScript
     {
-        private CheckPoint checkPoint;
-        private Collider2D collider2D;
+        private EnemyHead enemyHead;
         [Test]
-        public void TestCheckPointOnTriggerEnter2D()
+        public void TestEnemy()
         {
-            //checkPoint.OnTriggerEnter2D(collider2D);
             // Use the Assert class to test conditions
-            int check = 1;
-            Assert.AreEqual(1, check);
+            bool enemy = true;
+            string jugador = "vivo";
+            if (enemy==true && jugador == "vivo")
+            {
+                Assert.AreEqual(true, enemy);
+            }
         }
         // A Test behaves as an ordinary method
         [Test]
-        public void TestCheckPointSimplePasses()
+        public void NewTestScriptSimplePasses()
         {
             // Use the Assert class to test conditions
             int pass = 1;
@@ -30,7 +32,7 @@ namespace Tests
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
-        public IEnumerator TestCheckPointWithEnumeratorPasses()
+        public IEnumerator NewTestScriptWithEnumeratorPasses()
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
