@@ -8,7 +8,6 @@ namespace Tests
 {
     public class TestPassLevel
     {
-        
         private PassLevel passLevel;
         private Collider2D collider2D;
         private GameObject gameObject;
