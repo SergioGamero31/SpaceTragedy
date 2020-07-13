@@ -14,7 +14,6 @@ namespace Tests
         public void TestCheckPointOnTriggerEnter2D()
         {
             //checkPoint.OnTriggerEnter2D(collider2D);
-            // Use the Assert class to test conditions
             int check = 1;
             Assert.AreEqual(1, check);
         }
@@ -26,9 +25,6 @@ namespace Tests
             int pass = 1;
             Assert.AreEqual(1, pass);
         }
-
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
         [UnityTest]
         public IEnumerator TestCheckPointWithEnumeratorPasses()
         {

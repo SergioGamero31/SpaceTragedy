@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 
 namespace Tests
 {
-    public class Test
+    public class TestPlayerRaspawn
     {
         // A Test behaves as an ordinary method
         [Test]
