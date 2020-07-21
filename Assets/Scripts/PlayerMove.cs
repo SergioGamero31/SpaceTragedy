@@ -16,6 +16,8 @@ public class PlayerMove : MonoBehaviour
     public Animator animator;
 
     public SpriteRenderer spriteRenderer;
+
+    private float startRotY, endRotY,currentRotY;
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -23,23 +25,32 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
             rb2D.velocity = new Vector2(RunSpeed, rb2D.velocity.y);
             spriteRenderer.flipX = false;
             animator.SetBool("Run", true);
         }
-        else if (Input.GetKey("a") || Input.GetKey("left"))
+
+        else if(Input.GetKey("a") || Input.GetKey("left"))
         {
             rb2D.velocity = new Vector2(-RunSpeed, rb2D.velocity.y);
             spriteRenderer.flipX = true;
             animator.SetBool("Run", true);
+
+        }
+        else if (Input.GetKey("c"))
+        {
+            animator.SetBool("Shotidle", true);
         }
         else
         {
             rb2D.velocity = new Vector2(0, rb2D.velocity.y);
             animator.SetBool("Run", false);
-        }
+            animator.SetBool("Shotidle", false);
+        }     
+
         if (Input.GetKey("space") && CheckGround.isGrounded)
         {
             rb2D.velocity = new Vector2(rb2D.velocity.x, JumpSpeed);
