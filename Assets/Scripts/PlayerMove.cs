@@ -14,10 +14,11 @@ public class PlayerMove : MonoBehaviour
     public float lowJumpMultiplier = 1f;
 
     public Animator animator;
-
     public SpriteRenderer spriteRenderer;
 
-    private float startRotY, endRotY,currentRotY;
+    public Transform bulletSpawner;
+    public GameObject bulletPrefab;
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -25,24 +26,26 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-
+        PlayerShooting();
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
             rb2D.velocity = new Vector2(RunSpeed, rb2D.velocity.y);
-            spriteRenderer.flipX = false;
+            //spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1, 1, 1);
             animator.SetBool("Run", true);
         }
 
         else if(Input.GetKey("a") || Input.GetKey("left"))
         {
             rb2D.velocity = new Vector2(-RunSpeed, rb2D.velocity.y);
-            spriteRenderer.flipX = true;
+            //spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
             animator.SetBool("Run", true);
 
         }
-        else if (Input.GetKey("c"))
+        else if (Input.GetButtonDown("Fire1"))
         {
-            animator.SetBool("Shotidle", true);
+            PlayerShooting();
         }
         else
         {
@@ -74,6 +77,18 @@ public class PlayerMove : MonoBehaviour
             {
                 rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier) * Time.deltaTime;
             }
+        }
+    }
+    public void PlayerShooting()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            animator.SetBool("Shotidle", true);
+            Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+        }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            animator.SetBool("Shotidle", false);
         }
     }
 }
