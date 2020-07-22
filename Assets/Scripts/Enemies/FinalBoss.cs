@@ -7,28 +7,34 @@ using UnityEngine.UI;
 
 public class FinalBoss : MonoBehaviour
 {
-    public int heatlh;
-    public int damage;
-    private float timeBtwDamage = 1.5f;
+    public float visionRadius;
+    public float speed;
 
-    public Animator redPanel;
-    public Animator camAnim;
+    GameObject player;
 
-    public Slider healthBar;
+    Vector3 initialPosition;
+    
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
 
+        initialPosition = transform.position;
+    }
     void Update()
     {
-        if (timeBtwDamage > 0)
-        {
-            timeBtwDamage -= Time.deltaTime;
-        }
-        healthBar.value = heatlh;
-    }
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player")
-        {
+        Vector3 target = initialPosition;
 
-        }
-    }*/
+        float dist = Vector3.Distance(player.transform.position, transform.position);
+        if (dist < visionRadius) target = player.transform.position;
+
+        float fixedSpeed = speed * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, target, fixedSpeed);
+    
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, visionRadius);
+    }
+
 }
