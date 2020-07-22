@@ -9,7 +9,7 @@ public class Collected : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             GetComponent<SpriteRenderer>().enabled = false;
-            
+            Destroy(gameObject);
         }
     }
 }
